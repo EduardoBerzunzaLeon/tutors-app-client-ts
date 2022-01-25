@@ -1,0 +1,5 @@
+{
+    "eslint.packageManager": "yarn",
+    "files.eol": "\n",
+    "eslint.run": "onSave"
+}

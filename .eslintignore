@@ -1,0 +1,5 @@
+node_modules
+src/test
+src/screens
+src/components
+redux-legacy
