@@ -6,13 +6,13 @@ const RULES = {
 
 module.exports = {
   settings: {
-    'import/extensions': [ '.js', '.jsx', '.ts', '.tsx' ],
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     'import/parsers': {
-      '@typescript-eslint/parser': [ '.ts', '.tsx' ],
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
       node: {
-        extensions: [ '.js', '.jsx', '.ts', '.tsx' ],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
@@ -25,10 +25,7 @@ module.exports = {
   globals: {
     JSX: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -37,19 +34,21 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'jest',
-  ],
+  plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
-    'react/jsx-filename-extension': [ RULES.ERROR, { extensions: [ '.js', '.jsx', '.ts', '.tsx' ]}],
+    'react/jsx-filename-extension': [
+      RULES.ERROR,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
     'react/react-in-jsx-scope': RULES.OFF,
     'react/function-component-definition': RULES.OFF, // Disabled airbnb function component in jsx| tsx
-    'react/jsx-curly-spacing': [ RULES.ERROR, {
-      when: 'never',
-      allowMultiline: false,
-    }],
+    'react/jsx-curly-spacing': [
+      RULES.ERROR,
+      {
+        when: 'never',
+        allowMultiline: false,
+      },
+    ],
     'import/extensions': [
       RULES.ERROR,
       'ignorePackages',
@@ -60,16 +59,25 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'array-bracket-spacing': [ RULES.ERROR, 'always', { singleValue: true, objectsInArrays: false, arraysInArrays: false }],
-    'object-curly-spacing': [ RULES.ERROR, 'always', { objectsInObjects: false, arraysInObjects: false }],
+    'array-bracket-spacing': [
+      RULES.ERROR,
+      'always',
+      { singleValue: true, objectsInArrays: false, arraysInArrays: false },
+    ],
+    'object-curly-spacing': [
+      RULES.ERROR,
+      'always',
+      { objectsInObjects: false, arraysInObjects: false },
+    ],
     // Change the linebreak-style to CF (/n), Need to change in Settings "end of line" select \n
-    'linebreak-style': [ RULES.ERROR, 'unix' ],
+    'linebreak-style': [RULES.ERROR, 'unix'],
     // Disabled no-unused-vars in interfaces Typescript
     'no-unused-vars': RULES.OFF,
-    '@typescript-eslint/no-unused-vars': [
+    '@typescript-eslint/no-unused-vars': [RULES.ERROR],
+    'no-param-reassign': [
       RULES.ERROR,
+      { props: true, ignorePropertyModificationsFor: ['state'] },
     ],
-    'no-param-reassign': [ RULES.ERROR, { props: true, ignorePropertyModificationsFor: [ 'state' ]}],
-
+    'arrow-body-style': ['error', 'never'],
   },
 };
